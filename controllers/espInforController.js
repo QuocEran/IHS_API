@@ -35,7 +35,7 @@ const addData = async (req, res, next) => {
     const stamp = timeInstance.toString();
     data.TimeStamp = stamp;
     await setDoc(doc(db, "espData", espId, patientId, stamp), data);
-    await updateDoc(doc(db, "espData", espId, patientId, stamp), {
+    await updateDoc(doc(db, "patients", patientId), {
       status: status,
     });
 
